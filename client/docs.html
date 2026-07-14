@@ -5,15 +5,15 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Docs — HOODLIQUID · the perp DEX that can't go insolvent</title>
 <meta name="description" content="HOODLIQUID documentation: the percolator-style solvency engine (haircut H, queue-free ADL, bounded cranks), trading guide, markets, oracle, API reference, and the road to mainnet.">
-<link rel="canonical" href="https://hoodliquidrobinhood.xyz/docs">
+<link rel="canonical" href="https://hoodliquiddex.xyz/docs">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="HOODLIQUID">
-<meta property="og:url" content="https://hoodliquidrobinhood.xyz/docs">
+<meta property="og:url" content="https://hoodliquiddex.xyz/docs">
 <meta property="og:title" content="HOODLIQUID Docs — how the solvency engine works">
 <meta property="og:description" content="Haircut H · queue-free ADL · bounded cranks. The full mechanics of a perp DEX that can't go insolvent, on Robinhood Chain.">
-<meta property="og:image" content="https://hoodliquidrobinhood.xyz/og.png">
+<meta property="og:image" content="https://hoodliquiddex.xyz/og.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://hoodliquidrobinhood.xyz/og.png">
+<meta name="twitter:image" content="https://hoodliquiddex.xyz/og.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -309,7 +309,7 @@ docs below is visible there, live, while you trade.</pre>
     </ul>
 
     <h2 id="api"><span class="hash">#</span>API reference</h2>
-    <p>The exchange exposes a public read/write JSON API — the same one the terminal uses. Base URL: <code>https://hoodliquidrobinhood.xyz</code></p>
+    <p>The exchange exposes a public read/write JSON API — the same one the terminal uses. Base URL: <code>https://hoodliquiddex.xyz</code></p>
     <table>
       <tr><th>Endpoint</th><th>Method</th><th>Returns</th></tr>
       <tr><td>/api/config</td><td>GET</td><td>Token, network, markets, leverage caps, maintenance bps, oracle status.</td></tr>
@@ -321,10 +321,10 @@ docs below is visible there, live, while you trade.</pre>
       <tr><td>/api/close</td><td>POST</td><td><code>{wallet, id}</code> → closes a position, settles PnL under H.</td></tr>
     </table>
     <pre><i># watch the balance sheet live</i>
-curl -s https://hoodliquidrobinhood.xyz/api/metrics | jq '{residual, haircut, oi}'
+curl -s https://hoodliquiddex.xyz/api/metrics | jq '{residual, haircut, oi}'
 
 <i># open a paper long: 2,500 USDC at 10× on WIF</i>
-curl -s -X POST https://hoodliquidrobinhood.xyz/api/open \
+curl -s -X POST https://hoodliquiddex.xyz/api/open \
   -H 'content-type: application/json' \
   -d '{"wallet":"0xYourAddress","sym":"WIF","side":"long","size":2500,"lev":10}'</pre>
 
